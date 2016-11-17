@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import UserWidget from './containers/UserWidget'
+import DataButton from './containers/DataButton'
 
 class App extends Component {
   render() {
@@ -9,10 +9,10 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Welcome to a simple React Redux App</h2>
         </div>
         <p className="App-intro">
-        <UserWidget />
+          <DataButton />
         </p>
       </div>
     );

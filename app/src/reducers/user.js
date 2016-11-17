@@ -1,20 +1,20 @@
 const initialState = {
-  name: 'Ray',
-  age: 25
+  users: [],
+  loading: false
 }
 
 const user = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false
-      }
+    case 'REQUEST_DATA':
+      return Object.assign({}, state, { loading: true })
+    case 'RECEIVE_DATA':
+      return Object.assign({}, state, {
+        loading: false,
+        users: action.users
+      })
     default:
       return state
   }
 }
-
 
 export default user
