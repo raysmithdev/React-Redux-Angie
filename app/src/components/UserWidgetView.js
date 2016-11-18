@@ -1,11 +1,20 @@
 import React from 'react'
+import { Grid, Row, Col, Thumbnail } from 'react-bootstrap'
 
-const UserWidgetView = ({ name, age }) => {
+const UserWidgetView = ({ users }) => {
   return (
-    <div>
-      <h1>Hello { name }</h1>
-      <p>your age is { age }</p>
-    </div>
+    <Grid>
+      {users.map((user, index) =>
+        <Row key={index}>
+          <Col md={12}>
+            <Thumbnail src={user.picture.medium} alt="242x200">
+              <h3>{user.name.title} {user.name.first} {user.name.last}</h3>
+              <p>{user.email}</p>
+            </Thumbnail>
+          </Col>
+        </Row>
+      )}
+    </Grid>
   )
 }
 
